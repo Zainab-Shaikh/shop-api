@@ -8,6 +8,7 @@ const app = express();
 
 const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
+const userRoute = require("./routes/user");
 
 const port = 4000;
 
@@ -32,7 +33,7 @@ app.use((req, res, next) => {
 
 app.use("/product", productRoute);
 app.use("/order", orderRoute);
-
+app.use("/user", userRoute);
 // app.get("/", (req, res) => {
 //   res.send("hello");
 // });

@@ -5,7 +5,9 @@ const router = express.Router();
 const Order = require("../models/order");
 const Product = require("../models/product");
 
-router.get("/", (req, res, next) => {
+const verify = require("../verify");
+
+router.get("/", verify, (req, res, next) => {
   Order.find()
     .select("quantity productId _id")
     .populate("productId", "name price _id")
